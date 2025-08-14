@@ -1,0 +1,272 @@
+@charset "UTF-8";
+html, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: #222;
+}
+
+* {
+  position: relative;
+  font-family: "Hind Vadodara", sans-serif, "微軟正黑體";
+}
+
+label {
+  cursor: pointer;
+}
+
+.daybox {
+  width: 50%;
+  max-width: 400px;
+  background-color: #f3f3f3;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.daybox:hover .bottom {
+  height: 120px;
+}
+.daybox:hover .day_weather {
+  opacity: 1;
+  top: 0px;
+}
+
+.tempsvg {
+  width: 100%;
+}
+.tempsvg polyline {
+  stroke: #f3f3f3;
+  stroke-width: 1px;
+  fill: none;
+  opacity: 0.2;
+}
+.tempsvg text {
+  transform: translateX(-10px) translateY(20px);
+  font-size: 12px;
+  fill: #f3f3f3;
+  opacity: 0;
+}
+.tempsvg circle {
+  fill: #f3f3f3;
+  opacity: 0.2;
+}
+
+.rain {
+  width: 2px;
+  height: 10px;
+  position: absolute;
+  left: 45px;
+  bottom: 15px;
+  background-color: #f3f3f3;
+  animation: raindrop 1s infinite linear;
+}
+
+@keyframes raindrop {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+.rain2 {
+  left: 70px;
+  bottom: 20px;
+  animation-delay: 0.4s;
+}
+
+.rain3 {
+  left: 30px;
+  bottom: 10px;
+  animation-delay: 0.7s;
+}
+
+.top {
+  height: 330px;
+  background: linear-gradient(20deg, #19283D, #1D678F);
+  background-size: 100% 300%;
+  animation: daylight 20s both;
+  border-radius: 8px 8px 0px 0px;
+}
+@keyframes daylight {
+  0% {
+    background-position: 100% 30%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+.top .moon {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  box-shadow: 15px -15px;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  animation: moonmove 20s infinite;
+}
+@keyframes moonmove {
+  0% {
+    box-shadow: 15px -15px #FFD633;
+    transform: translateX(-15px) translateY(15px);
+  }
+  100% {
+    box-shadow: -30px 30px #FFD633;
+    transform: translateX(30px) translateY(-30px);
+  }
+}
+
+.cloud {
+  width: 100px;
+  height: 36px;
+  position: absolute;
+  left: 200px;
+  bottom: 50px;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  animation: clouddrift 4s infinite;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+}
+.cloud:before, .cloud:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  position: absolute;
+  background-color: #f3f3f3;
+}
+.cloud:before {
+  left: 16px;
+  top: -28px;
+}
+.cloud:after {
+  left: 36px;
+  top: -25px;
+}
+
+@keyframes clouddrift {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.bottom {
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition-duration: 1s;
+}
+.bottom .day_weather {
+  width: calc(100% / 7 - 5px);
+  display: inline-block;
+  text-align: center;
+  opacity: 0;
+  top: 20px;
+  transition: 0.5s;
+}
+.bottom .day_weather h3 {
+  font-size: 12px;
+  color: rgba(34, 34, 34, 0.7);
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.bottom .day_weather svg {
+  width: 100%;
+  max-width: 40px;
+  height: 40px;
+}
+.bottom .day_weather svg .sun {
+  fill: #FFD633;
+  stroke: rgba(255, 214, 51, 0.5);
+  stroke-width: 20px;
+  stroke-dasharray: 5px;
+}
+.bottom .day_weather svg .rain {
+  stroke: #222;
+  stroke-width: 3px;
+}
+.bottom .day_weather svg .cloud {
+  fill: #ccc;
+}
+
+.day_weather:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.day_weather:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.day_weather:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.day_weather:nth-child(4) {
+  transition-delay: 0.5s;
+}
+
+.day_weather:nth-child(5) {
+  transition-delay: 0.6s;
+}
+
+.day_weather:nth-child(6) {
+  transition-delay: 0.7s;
+}
+
+.day_weather:nth-child(7) {
+  transition-delay: 0.8s;
+}
+
+.text_area {
+  display: inline-block;
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  color: #f3f3f3;
+}
+.text_area .temperature {
+  font-size: 75px;
+  line-height: 70px;
+}
+.text_area .infos {
+  font-size: 13px;
+}
+
+.moon, .cloud {
+  transition: 0.5s;
+}
+
+.tempsvg circle {
+  transition-duration: 0.5s;
+}
+.tempsvg polyline {
+  transition: 0.5s 0.3s;
+}
+.tempsvg text {
+  transition: 0.5s 0.5s;
+}
+
+#switch_night {
+  display: none;
+}
+
+#switch_night:checked + .top .moon, #switch_night:checked + .top .cloud {
+  opacity: 0.3;
+}
+#switch_night:checked + .top .tempsvg circle, #switch_night:checked + .top .tempsvg polyline, #switch_night:checked + .top .tempsvg text {
+  opacity: 1;
+}

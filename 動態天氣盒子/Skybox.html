@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>天氣小卡</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="daybox">
+  <label>
+    <input id="switch_night" type="checkbox"/>
+    <div class="top">
+      <div class="moon"> </div>
+      <div class="cloud">
+        <div class="rain"></div>
+        <div class="rain rain2"></div>
+        <div class="rain rain3"></div>
+      </div>
+      <svg class="tempsvg">
+        <circle cx="0" cy="100" r="3"></circle>
+        <text x="0" y="100">26℃</text>
+        <circle cx="70" cy="80" r="3"></circle>
+        <text x="70" y="80">27.5℃</text>
+        <circle cx="140" cy="60" r="3"></circle>
+        <text x="140" y="60">28℃</text>
+        <circle cx="210" cy="70" r="3"></circle>
+        <text x="210" y="70">27.5℃</text>
+        <circle cx="280" cy="80" r="3"></circle>
+        <text x="280" y="80">26℃</text>
+        <circle cx="350" cy="50" r="3"></circle>
+        <text x="350" y="50">27.8℃</text>
+        <circle cx="420" cy="-50" r="3"></circle>
+        <polyline points="0,100 70,80 140,60 210,70 280,80 350,50 420,-50"></polyline>
+      </svg>
+      <div class="text_area">
+        <div class="temperature">19℃</div>
+        <div class="infos">
+          <div class="location">南港區 臺北市</div>
+          <div class="time">週五16日 下午3:47</div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="day_weather"> 
+        <h3>Mon</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22"></circle>
+        </svg>
+      </div>
+      <div class="day_weather"> 
+        <h3>Tue</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22"></circle>
+        </svg>
+      </div>
+      <div class="day_weather"> 
+        <h3>Wed</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22"></circle>
+          <circle class="cloud" cx="0" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-15" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-30" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-25" cy="10" r="15"></circle>
+          <circle class="cloud" cx="-5" cy="15" r="15"></circle>
+        </svg>
+      </div>
+      <div class="day_weather"> 
+        <h3>Thr</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22"></circle>
+          <circle class="cloud" cx="0" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-15" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-30" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-25" cy="10" r="15"></circle>
+          <circle class="cloud" cx="-5" cy="15" r="15"></circle>
+        </svg>
+      </div>
+      <div class="day_weather"> 
+        <h3>Fri</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22"></circle>
+          <circle class="cloud" cx="0" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-15" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-30" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-25" cy="10" r="15"></circle>
+          <circle class="cloud" cx="-5" cy="15" r="15"></circle>
+        </svg>
+      </div>
+      <div class="day_weather"> 
+        <h3>Sat</h3>
+        <svg viewbox="-65 -20 100 100">
+          <!--SVG覆蓋的下層要先寫-->
+          <line class="rain" x1="-25" y1="15" x2="-25" y2="35"></line>
+          <line class="rain" x1="-14" y1="5" x2="-14" y2="25"></line>
+          <line class="rain" x1="-5" y1="20" x2="-5" y2="45"></line>
+          <circle class="cloud" cx="0" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-15" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-30" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-25" cy="10" r="15"></circle>
+          <circle class="cloud" cx="-5" cy="15" r="15"></circle>
+        </svg>
+      </div>
+      <div class="day_weather"> 
+        <h3>Sun</h3>
+        <svg viewbox="-65 -20 100 100">
+          <circle class="cloud" cx="0" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-15" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-30" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-25" cy="10" r="15"></circle>
+          <circle class="cloud" cx="-5" cy="15" r="15"></circle>
+        </svg>
+      </div>
+    </div>
+  </label>
+</div>
