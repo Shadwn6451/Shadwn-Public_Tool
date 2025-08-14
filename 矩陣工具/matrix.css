@@ -1,0 +1,148 @@
+/* matrix.css — 簡潔、現代、可讀性優先 */
+:root {
+  --bg: #0b0c10;
+  --panel: #111319;
+  --muted: #9aa0a6;
+  --text: #e8eaed;
+  --accent: #7aa2ff;
+  --accent-2: #2dd4bf;
+  --border: #1f2430;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", Arial, "PingFang TC", "Heiti TC", sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 20% -10%, #10131b, var(--bg));
+}
+
+.app-header, .app-footer {
+  max-width: 1200px;
+  margin: 16px auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.app-header h1 {
+  font-weight: 800;
+  letter-spacing: .5px;
+  margin: 0;
+}
+.app-header .sub {
+  font-weight: 500;
+  font-size: .6em;
+  color: var(--muted);
+  margin-left: .4rem;
+}
+.header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border .2s, transform .05s;
+}
+.ghost:hover { border-color: var(--accent); }
+.ghost:active { transform: translateY(1px); }
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 16px;
+}
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.panel-head h2 { margin: 0; font-size: 1.1rem; }
+.panel-foot { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+.dims {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--border); padding: 6px 8px; border-radius: 999px;
+}
+.dims input {
+  width: 56px; padding: 4px 6px; color: var(--text);
+  background: #0f1220; border: 1px solid var(--border);
+  border-radius: 8px; text-align: center;
+}
+.mini {
+  padding: 6px 10px; border-radius: 10px; border: 1px solid var(--border);
+  background: #121622; color: var(--text); cursor: pointer;
+}
+.mini:hover { border-color: var(--accent); }
+.mini:active { transform: translateY(1px); }
+
+.matrix {
+  overflow: auto; border: 1px dashed var(--border); border-radius: 12px;
+  padding: 10px; background: #0e1017;
+}
+.grid-input .row, .grid-output .row { display: grid; grid-auto-flow: column; gap: 8px; margin-bottom: 8px; }
+.grid-input .cell {
+  width: 86px; padding: 10px 8px; font-family: var(--mono);
+  background: #0c0f18; color: var(--text); border: 1px solid var(--border); border-radius: 10px;
+  outline: none;
+}
+.grid-input .cell:focus { border-color: var(--accent-2); box-shadow: 0 0 0 3px rgba(45,212,191,.15); }
+.grid-output .cell {
+  min-width: 86px; padding: 10px 8px; font-family: var(--mono);
+  background: #090c12; color: var(--text);
+  border: 1px solid #171a24; border-radius: 10px; text-align: right;
+}
+
+.ops { grid-column: span 2; }
+.op-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.op-group {
+  border: 1px solid var(--border); border-radius: 12px; padding: 12px;
+  background: #0c101a;
+}
+.op-title { color: var(--muted); margin-bottom: 8px; font-size: .95rem; }
+.op {
+  width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--border);
+  background: #121622; color: var(--text); cursor: pointer; margin-bottom: 8px;
+}
+.op:hover { border-color: var(--accent); }
+.op:active { transform: translateY(1px); }
+
+.note { color: var(--muted); margin-top: 8px; }
+
+.result { grid-column: span 2; }
+.result-actions { display: flex; gap: 8px; }
+
+.scalar {
+  margin-top: 10px; padding: 10px 12px; border: 1px dashed var(--border);
+  border-radius: 12px; background: #0e1017; color: var(--accent-2);
+  font-family: var(--mono); font-size: 1rem; white-space: pre-wrap;
+}
+
+.app-footer { color: var(--muted); }
+
+/* 響應式 */
+@media (max-width: 960px) {
+  .grid { grid-template-columns: 1fr; }
+  .ops, .result { grid-column: span 1; }
+  .grid-input .cell, .grid-output .cell { min-width: 72px; width: 72px; }
+}
